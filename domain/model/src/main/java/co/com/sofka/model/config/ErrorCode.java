@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public enum ErrorCode {
-
+    B409000("B409-000", 409, "Transaction already exists"),
     E500005("E500-005", 500, "Error when trying to connect to the database");
 
     private final String code;
