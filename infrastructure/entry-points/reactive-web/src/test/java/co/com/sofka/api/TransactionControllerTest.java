@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 
 @ContextConfiguration(classes = {TransactionController.class})
 @WebFluxTest
-public class TransactionControllerTest {
+class TransactionControllerTest {
 
     @Autowired
     private WebTestClient webTestClient;

@@ -20,10 +20,8 @@ public class MessageRabbit implements RabbitGateway {
 
     @Override
     public Mono<String> sendMessage(Transaction transaction) {
-        return Mono.fromRunnable(() -> amqpTemplate.convertAndSend(EXCHANGE_NAME, ROUTING_KEY, convertObjectToJsonString(transaction)))
-                .doOnError(e -> log.error("Error sending message to RabbitMQ: {}", e.getMessage(), e))
-                .thenReturn("Message Sent")
-                .onErrorResume(e -> Mono.just("Failed to send message"));
+        amqpTemplate.convertAndSend(EXCHANGE_NAME, ROUTING_KEY, convertObjectToJsonString(transaction));
+        return Mono.just("Message Sent");
     }
 
     public static String convertObjectToJsonString(Transaction transaction) {
