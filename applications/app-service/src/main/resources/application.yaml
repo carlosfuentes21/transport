@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
     name: "transport"
@@ -13,4 +13,15 @@ spring:
     include: null
   data:
     mongodb:
-      uri: "mongodb://localhost:27017/test"
+      uri: "mongodb://localhost:27017/transport"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,prometheus"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+cors:
+  allowed-origins: "http://localhost:4200,http://localhost:8080"
