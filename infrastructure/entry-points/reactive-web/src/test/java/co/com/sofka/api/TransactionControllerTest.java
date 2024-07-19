@@ -32,7 +32,7 @@ class TransactionControllerTest {
         TransactionDto transactionDto = TransactionDto.builder()
                 .transactionId("123456")
                 .deviceNumber("123456")
-                .timestamp(LocalDateTime.now())
+                .timestamp("2024-07-17T10:00:00")
                 .userId("123456")
                 .geoPosition("123456, 654321")
                 .amount(100.00)

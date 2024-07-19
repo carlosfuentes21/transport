@@ -16,7 +16,8 @@ public class TransactionDto {
     @Size(min = 6, max = 8)
     private String transactionId;
     @NotNull
-    private LocalDateTime timestamp;
+    @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}")
+    private String timestamp;
     @NotNull
     @Pattern(regexp ="^[0-9+]*$")
     @Size(min = 6, max = 8)

@@ -82,7 +82,7 @@ jacoco {
 }
 
 tasks.register('jacocoMergedReport', JacocoReport) {
-    dependsOn = [test, subprojects.jacocoTestReport]
+    dependsOn = subprojects.jacocoTestReport
     additionalSourceDirs.setFrom files(subprojects.sourceSets.main.allSource.srcDirs)
     sourceDirectories.setFrom files(subprojects.sourceSets.main.allSource.srcDirs)
     classDirectories.setFrom files(subprojects.sourceSets.main.output)
@@ -92,6 +92,20 @@ tasks.register('jacocoMergedReport', JacocoReport) {
         csv.setRequired false
         html.setRequired true
     }
+    classDirectories.setFrom(files(classDirectories.files.collect {
+        fileTree(dir: it, exclude: [
+                "**/model/**",
+                "**/dto/**",
+                "**/config/**",
+                "**/*Application.java",
+                "**/Exception*",
+                "**/*Document.java",
+                "**/helper/**",
+                "**/test/**",
+                "modular-test/**",
+                "deployment/**"
+        ])
+    }))
 }
 
 tasks.withType(JavaCompile).configureEach {

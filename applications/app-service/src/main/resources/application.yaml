@@ -28,4 +28,5 @@ cors:
 
 app:
   cron:
-    regex: "*/10 * * * * *"
+    regex: "0 0 0 * * *"
+    #regex: "*/10 * * * * *"
