@@ -3,7 +3,7 @@ package co.com.sofka.mongo.adapter;
 import co.com.sofka.model.config.ErrorCode;
 import co.com.sofka.model.config.RedebanException;
 import co.com.sofka.model.gateways.TransactionGateway;
-import co.com.sofka.model.transaction.Transaction;
+import co.com.sofka.model.Transaction;
 import co.com.sofka.mongo.document.TransactionDocument;
 import co.com.sofka.mongo.helper.AdapterOperations;
 import co.com.sofka.mongo.mapper.TransactionMapper;

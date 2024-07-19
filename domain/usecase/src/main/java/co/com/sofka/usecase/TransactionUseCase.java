@@ -4,7 +4,7 @@ import co.com.sofka.model.config.ErrorCode;
 import co.com.sofka.model.config.RedebanException;
 import co.com.sofka.model.gateways.RabbitGateway;
 import co.com.sofka.model.gateways.TransactionGateway;
-import co.com.sofka.model.transaction.Transaction;
+import co.com.sofka.model.Transaction;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 

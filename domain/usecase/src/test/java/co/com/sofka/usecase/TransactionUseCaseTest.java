@@ -3,7 +3,7 @@ package co.com.sofka.usecase;
 import co.com.sofka.model.config.RedebanException;
 import co.com.sofka.model.gateways.RabbitGateway;
 import co.com.sofka.model.gateways.TransactionGateway;
-import co.com.sofka.model.transaction.Transaction;
+import co.com.sofka.model.Transaction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

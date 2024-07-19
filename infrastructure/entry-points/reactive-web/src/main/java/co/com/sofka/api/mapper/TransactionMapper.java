@@ -1,7 +1,7 @@
 package co.com.sofka.api.mapper;
 
 import co.com.sofka.api.dto.TransactionDto;
-import co.com.sofka.model.transaction.Transaction;
+import co.com.sofka.model.Transaction;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

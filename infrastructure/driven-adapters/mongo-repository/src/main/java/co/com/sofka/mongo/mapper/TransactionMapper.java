@@ -1,6 +1,6 @@
 package co.com.sofka.mongo.mapper;
 
-import co.com.sofka.model.transaction.Transaction;
+import co.com.sofka.model.Transaction;
 import co.com.sofka.mongo.document.TransactionDocument;
 import lombok.experimental.UtilityClass;
 

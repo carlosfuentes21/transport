@@ -1,6 +1,6 @@
 package co.com.sofka.mongo.adapter;
 
-import co.com.sofka.model.transaction.Transaction;
+import co.com.sofka.model.Transaction;
 import co.com.sofka.mongo.document.TransactionDocument;
 import co.com.sofka.mongo.repository.TransactionDBRepository;
 import org.junit.jupiter.api.Assertions;

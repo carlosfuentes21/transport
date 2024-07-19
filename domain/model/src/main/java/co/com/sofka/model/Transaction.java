@@ -1,4 +1,4 @@
-package co.com.sofka.model.transaction;
+package co.com.sofka.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
