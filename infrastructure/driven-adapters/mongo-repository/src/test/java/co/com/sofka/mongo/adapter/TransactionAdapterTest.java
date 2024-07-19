@@ -84,4 +84,18 @@ public class TransactionAdapterTest {
                 .verify();
     }
 
+    @Test
+    void sumAmountByTimestampBetweenTest() {
+        when(repository.sumAmountByTimestampBetween(any(LocalDateTime.class), any(LocalDateTime.class))).thenReturn(Mono.just(100.0));
+
+        StepVerifier.create(transactionAdapter.sumAmountByTimestampBetween(LocalDateTime.now(), LocalDateTime.now()))
+                .expectSubscription()
+                .expectNextMatches(response -> {
+                    Assertions.assertEquals(100.0, response);
+                    return true;
+                })
+                .expectComplete()
+                .verify();
+    }
+
 }

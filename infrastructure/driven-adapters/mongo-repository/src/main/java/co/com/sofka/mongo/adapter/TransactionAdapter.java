@@ -12,6 +12,8 @@ import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
+import java.time.LocalDateTime;
+
 @Repository
 public class TransactionAdapter extends AdapterOperations<Transaction, TransactionDocument, String, TransactionDBRepository> implements TransactionGateway {
 
@@ -29,6 +31,12 @@ public class TransactionAdapter extends AdapterOperations<Transaction, Transacti
     public Mono<Transaction> insert(Transaction transaction) {
         return saveData(TransactionMapper.toDocument(transaction))
                 .map(TransactionMapper::toDomain)
+                .onErrorResume(e -> Mono.error(new RedebanException(ErrorCode.E500005)));
+    }
+
+    @Override
+    public Mono<Double> sumAmountByTimestampBetween(LocalDateTime startOfDay, LocalDateTime endOfDay) {
+        return repository.sumAmountByTimestampBetween(startOfDay, endOfDay)
                 .onErrorResume(e -> Mono.error(new RedebanException(ErrorCode.E500005)));
     }
 
