@@ -1,6 +1,6 @@
 package co.com.sofka.mongo.adapter;
 
-import co.com.sofka.model.transaction.Transaction;
+import co.com.sofka.model.Transaction;
 import co.com.sofka.mongo.document.TransactionDocument;
 import co.com.sofka.mongo.repository.TransactionDBRepository;
 import org.junit.jupiter.api.Assertions;
@@ -78,6 +78,20 @@ public class TransactionAdapterTest {
                 .expectSubscription()
                 .expectNextMatches(response -> {
                     Assertions.assertEquals(transaction.getTransactionId(), response.getTransactionId());
+                    return true;
+                })
+                .expectComplete()
+                .verify();
+    }
+
+    @Test
+    void sumAmountByTimestampBetweenTest() {
+        when(repository.sumAmountByTimestampBetween(any(LocalDateTime.class), any(LocalDateTime.class))).thenReturn(Mono.just(100.0));
+
+        StepVerifier.create(transactionAdapter.sumAmountByTimestampBetween(LocalDateTime.now(), LocalDateTime.now()))
+                .expectSubscription()
+                .expectNextMatches(response -> {
+                    Assertions.assertEquals(100.0, response);
                     return true;
                 })
                 .expectComplete()

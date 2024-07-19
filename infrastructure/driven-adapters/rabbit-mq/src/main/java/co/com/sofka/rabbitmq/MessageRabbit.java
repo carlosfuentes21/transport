@@ -1,7 +1,7 @@
 package co.com.sofka.rabbitmq;
 
 import co.com.sofka.model.gateways.RabbitGateway;
-import co.com.sofka.model.transaction.Transaction;
+import co.com.sofka.model.Transaction;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;

@@ -1,6 +1,6 @@
 package co.com.sofka.rabbitmq;
 
-import co.com.sofka.model.transaction.Transaction;
+import co.com.sofka.model.Transaction;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

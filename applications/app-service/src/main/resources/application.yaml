@@ -25,3 +25,7 @@ management:
         enabled: true
 cors:
   allowed-origins: "http://localhost:4200,http://localhost:8080"
+
+app:
+  cron:
+    regex: "*/10 * * * * *"
